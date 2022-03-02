@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils_2.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjarry <marvin@42quebec.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 11:20:00 by mjarry            #+#    #+#             */
+/*   Updated: 2022/03/02 11:21:39 by mjarry           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int chr_count(int nbr)
+int	chr_count(int nbr)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (nbr < 0)
@@ -15,9 +27,10 @@ int chr_count(int nbr)
 	return (i);
 }
 
-int chr_count_u(unsigned int nbr)
+int	chr_count_u(unsigned int nbr)
 {
-	int i;
+	int	i;
+
 	i = 1;
 	while (nbr > 9)
 	{
@@ -27,8 +40,7 @@ int chr_count_u(unsigned int nbr)
 	return (i);
 }
 
-
-int ft_putnbr(int nbr)
+int	ft_putnbr(int nbr)
 {
 	long	nb;
 
@@ -45,10 +57,10 @@ int ft_putnbr(int nbr)
 	}
 	if (nb < 10)
 		ft_putchar(nb + '0');
-	return(chr_count(nbr));
+	return (chr_count(nbr));
 }
 
-int ft_putunsigned(unsigned int nbr)
+int	ft_putunsigned(unsigned int nbr)
 {
 	long	nb;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjarry <marvin@42quebec.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 10:29:52 by mjarry            #+#    #+#             */
+/*   Updated: 2022/03/02 10:31:20 by mjarry           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
 
@@ -31,10 +43,10 @@ int	ft_function_check(va_list args, const char type)
 	return (len);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int 	i;
+	int		i;
 	int		len;
 
 	i = 0;

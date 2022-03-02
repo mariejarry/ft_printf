@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjarry <marvin@42quebec.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 11:17:59 by mjarry            #+#    #+#             */
+/*   Updated: 2022/03/02 11:19:48 by mjarry           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = -1;
 	len = 0;
@@ -17,24 +29,24 @@ int ft_putstr(char *str)
 	return (len);
 }
 
-int ft_putptr(unsigned long long ptr, char *base)
+int	ft_putptr(unsigned long long ptr, char *base)
 {
-	int len;
+	int	len;
 
 	len = ft_putstr("0x");
 	ft_puthex(ptr, base, 16, &len);
 	return (len);
 }
 
-void ft_puthex(unsigned long long ptr, char *base, int baselen, int *chrcount)
+void	ft_puthex(unsigned long long ptr, char *base, int baselen, int *len)
 {
 	if (ptr >= (unsigned long long)baselen)
-		ft_puthex(ptr/baselen, base, baselen, chrcount);
+		ft_puthex(ptr / baselen, base, baselen, len);
 	write(1, &base[(ptr % baselen)], 1);
-	(*chrcount)++;
+	(*len)++;
 }
 
-int ft_putx(unsigned int ptr, char *base)
+int	ft_putx(unsigned int ptr, char *base)
 {
 	int	len;
 
@@ -42,4 +54,3 @@ int ft_putx(unsigned int ptr, char *base)
 	ft_puthex(ptr, base, 16, &len);
 	return (len);
 }
-
